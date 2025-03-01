@@ -1,0 +1,44 @@
+#main-div{
+    height: 40vh;
+    overflow: hidden;
+}
+.custom-gradient{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(95,95,213,1) 46%, rgba(33,138,159,1) 100%);
+}
+.ico1{
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    opacity: 20%;
+}
+.ico2{
+    position: absolute;
+    top: 20px;
+    right: 500px;
+    opacity: 40%;
+}
+.ico3{
+    position: absolute;
+    top: 120px;
+    right: 100px;
+    opacity: 60%;
+}
+.ico4{
+    position: absolute;
+    top: 160px;
+    left: 400px;
+    opacity: 40%;
+}
+#reason-div{
+    background-color: rgb(12, 51, 112);
+    height: 400px;
+}
+#reason-list{
+    list-style-type: none;
+}
+#reason-list li{
+    margin: 15px;
+    text-decoration: none;
+    font-size: large;
+    color: #fff;
+}

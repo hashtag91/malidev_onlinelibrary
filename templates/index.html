@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<div class="container-fluid custom-gradient position-relative d-flex justify-content-center align-items-center" id="main-div">
+    <span class="ico1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+    </span>
+    <span class="ico2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+        </svg>
+    </span>
+    <span class="ico3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-terminal">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+    </span>
+    <span class="ico4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+    </span>
+    <h1 class="text-white text-center">Malidev Bibliothèque</h1>
+</div>
+<div class="container-fluid bg-body-secondary flex justify-content-center align-items-center p-5">
+    <div class="row flex justify-content-center align-items-center">
+        <div class="col-lg-5 col-md-6 col-sm-12 flex flex-column justify-content-center align-items-evenly">
+            <h2 class="fw-bold fs-3">Votre Bibliothèque de Référence</h2>
+            <h3>
+                Malidev Biblio est une plateforme digitale complète dédiée aux développeurs, étudiants et passionnés de programmation.<br>
+                Elle offre une vaste collection de documentations officielles et communautaires couvrant une multitude de langages et frameworks, du développement web à l’intelligence artificielle.
+            </h3>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12">
+            <img src="{{url_for('static',filename='img/devloppeur.webp')}}" alt="Developpeur" class="img-fluid rounded-3">
+        </div>
+    </div>
+</div>
+<div class="container col-lg-6 col-sm-12 flex flex-column justify-content-center align-items-center my-5 py-3 rounded" id="reason-div">
+    <h2 class="text-center fs-2 text-white">Pourquoi choisir notre Biblio ?</h2>
+    <ul class="d-flex flex-column justify-content-center align-items-center" id="reason-list">
+        <li>🔹Un accès centralisé</li>
+        <li>🔹Mises à jour en temps réel</li>
+        <li>🔹Navigation intuitive</li>
+        <li>🔹Communauté engagée</li>
+        <li>🔹Supports variés</li>
+    </ul>
+</div>
+
+{% endblock %}

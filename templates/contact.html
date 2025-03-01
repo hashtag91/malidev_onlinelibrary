@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/contact_style.css')}}">
+<div class="container d-flex justify-content-center align-items-center my-5" id="form-div">
+    <form action="{{url_for('sendmail')}}" method="post" class="form d-flex flex-column gap-1 justify-content-center col-lg-4 col-md-6 col-sm-12 shadow rounded p-3">
+        <h2 class="text-center">Contactez-nous</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <p style="color: {% if category == 'success' %} green {% else %}red{% endif %};">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endwith %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" name="name" id="name" placeholder="Votre nom complet" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" placeholder="addresse@exemple.com" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" name="message" id="message" rows="5" cols="50" placeholder="Votre message..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+</div>
+{% endblock %}
