@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <form action="{{url_for('book_saving')}}" method="post" class="form col-lg-8 col-md-12 col-sm-12 rounded shadow m-3 p-5" enctype="multipart/form-data">
+        <h2 class="text-center">Ajouter un livre</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <p style="color: {% if category == 'success' %} green {% else %}red{% endif %};">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endwith %}
+        <div class="mb-3">
+            <label for="title" class="form-label">Titre</label>
+            <input type="text" name="title" id="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Auteur</label>
+            <input type="text" name="author" id="author" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="langage" class="form-label">Langage</label>
+            <select class="form-select" aria-label="Default select example" name="langage" id="langage" required>
+                <option value="html_css">HTML & CSS</option>
+                <option value="c">C</option>
+                <option value="c#">C#</option>
+                <option value="c++">C++</option>
+                <option value="dart">Dart</option>
+                <option value="go">GO</option>
+                <option value="java">Java</option>
+                <option value="js">JavaScript</option>
+                <option value="kotlin">Kotlin</option>
+                <option value="php">PHP</option>
+                <option value="python">Python</option>
+                <option value="rust">Rust</option>
+                <option value="ruby">Ruby</option>
+                <option value="swift">Swift</option>
+                <option value="sql">SQL</option>
+                <option value="ts">TypeScript</option>
+                <option value="uml">UML</option>
+                <option value="xml">XML</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select class="form-select" aria-label="Default select example" name="type" id="type" required>
+                <option value="langage">Langage</option>
+                <option value="framework">Framework</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoarie</label>
+            <select class="form-select" aria-label="Default select example" name="category" id="category">
+                <option value="web">Web</option>
+                <option value="mobile">Mobile</option>
+                <option value="systeme">Systeme</option>
+                <option value="ia">IA</option>
+                <option value="automatisation">Automatisation</option>
+                <option value="blockchain">Blockchain</option>
+                <option value="cs">CyberSécurité</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <textarea name="description" id="description" rows="6" placeholder="Description" class="w-100"></textarea>
+        </div>
+        <div class="mb-3">
+            <textarea name="table" id="table" rows="6" placeholder="Table (Séparer les différents points par un retour à la ligne)" class="w-100"></textarea>
+        </div>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload</label>
+            <input type="file" class="form-control" id="inputGroupFile01" name="file" required>
+          </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+        </div>
+        
+    </form>
+</div>
+{% endblock %}

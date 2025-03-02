@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/langage_style.css')}}">
+<div class="main-div">
+    <div class="custom-div my-3">
+        <h2 class="text-center text-white">{{langage}}</h2>
+    </div>
+    <div class="files-div d-flex flex-column justify-content-center">
+            {% for doc in docs %}
+                <a href="#" style="text-decoration: none;">{{doc}}</a>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
